@@ -1,0 +1,50 @@
+.AppHeader {
+    background: #0f88eb;
+    border-bottom: 1px solid rgba(30,35,42,.06);
+    box-shadow: 0 1px 3px 0 rgba(0,34,77,.05);
+    background-clip: content-box;
+}
+.AppHeader-inner .AppName {
+	color: white;
+}
+.AppHeader-inner span {
+	display: inline-block;
+	color: white;
+	font-size: 20px;
+	margin-top: 8px;
+	margin-left: 40px;
+}
+
+
+.main-feed-wrapper {
+	width: 500px;
+	height: 400px;
+	margin: 50px auto;
+	padding: 80px 60px;
+	background-color: white;
+}
+.main-feed-wrapper div {
+	padding: 10px;
+}
+.main-feed-wrapper label {
+	width: 60px;		
+}
+.main-feed-wrapper input {
+	display: inline-block;
+	width: 250px;
+}
+.main-feed-wrapper .errorMessage {
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 20px;
+	color: red;
+}
+.main-feed-wrapper button, .main-feed-wrapper button {
+	float: right;
+	margin-top: 20px;
+}
+.main-feed-wrapper .logReg-textButton, .main-feed-wrapper .logReg-textButton {
+	float: right;
+	margin-top: 33px;
+	margin-right: 20px;
+}

@@ -1,0 +1,71 @@
+.question-info {
+	position: relative;
+	padding: 20px;
+}
+.question-info .question-link {
+	font-size: 24px;
+}
+.question-info .author-link-line, .question-info .time-line {
+	color: #999;
+}
+.question-info .author-link {
+	color: #555;
+}
+.question-info .time-line {
+	margin-left: 20px;
+}
+
+.question-info .question-detail {
+	margin-top: 10px;
+}
+.btn-answer {
+	position: absolute;
+	top: 28px;
+	right: 30px;
+	background-color: white;
+    border-color: #0f88eb;
+    color: #0f88eb;
+}
+.btn-answer:hover {
+	background-color: #0f88eb;
+	color: white;
+}
+
+/*所有回答*/
+.question-answers {
+	position: relative;
+	padding: 20px;
+}
+.answers-title {
+	position: relative;
+	line-height: 24px;
+	padding-bottom: 5px;
+}
+.answers-title .Sorter {
+	position: absolute;
+	/*top: 8px;*/
+	top: -8px;
+	right: 10px;
+}
+.answers-title #answers-num {
+	margin-top: 0;
+	font-size: 17px;
+}
+
+/*具体的回答*/
+.answer-item {
+	padding: 6px;
+	border-top: 1px solid #ccc;
+}
+.answer-item .answer-head .voters {
+	color: #999;
+	font-size: 13px;
+}
+.answer-item .feed-vote {
+	float: left;
+	margin-left: 0;	
+}
+.answer-item .answer-text {
+	min-height: 40px;
+	margin-left: 80px;
+}	

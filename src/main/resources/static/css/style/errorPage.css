@@ -1,0 +1,12 @@
+body{
+    text-align: center;
+    margin-top: 12%;
+    background-color: rgb(244,249,242);
+}
+.word{
+    font-size: 20px;
+    color: rgb(36,92,119);
+}
+button{
+    margin-top: 150px;
+}

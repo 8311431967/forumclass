@@ -1,26 +1,28 @@
 package kun.clSystem.domain;
 
+import org.hibernate.annotations.DynamicInsert;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "user")
+@DynamicInsert
 public class User implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", nullable = false)
-	private int id;
-	
-	@Column(name = "email", nullable = false, unique = true)
+
+
+
+	private Integer id;
 	private String email;
-	
-	@Column(name = "password", nullable = false)
+	private String userName;
 	private String password;
-	
+	private Integer sex;
+	private Integer integral;
+
+	private Integer numOfQuestion;
+	private Integer numOfAnswer;
+
 	@ManyToMany
 	@JoinTable(
 			name = "user_role",
@@ -29,11 +31,61 @@ public class User implements Serializable {
 	)
 	private Set<Role> roles;
 
-	public int getId() {
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+	//    private String checkCode;
+//    @Transient
+//    public String getCheckCode() {
+//        return checkCode;
+//    }
+//
+//    public void setCheckCode(String checkCode) {
+//        this.checkCode = checkCode;
+//    }
+
+	@Transient
+	public Integer getNumOfAnswer() {
+		return numOfAnswer;
+	}
+
+	public void setNumOfAnswer(Integer numOfAnswer) {
+		this.numOfAnswer = numOfAnswer;
+	}
+	@Transient
+	public Integer getNumOfQuestion() {
+		return numOfQuestion;
+	}
+
+	public void setNumOfQuestion(Integer numOfQuestion) {
+		this.numOfQuestion = numOfQuestion;
+	}
+
+	public User(String email, String userName, String password) {
+		this.email = email;
+		this.userName = userName;
+		this.password = password;
+	}
+
+	public User() {
+	}
+
+	public User(String email,String password){
+		this.email=email;
+		this.password=password;
+	}
+
+	@Id
+	@GeneratedValue
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -45,6 +97,16 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
+	@Column(name = "username")
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
 	public String getPassword() {
 		return password;
 	}
@@ -52,13 +114,33 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public Set<Role> getRoles() {
-		return roles;
+
+	//    @Column(nullable = false,columnDefinition = "int(1) default 1")
+	public Integer getSex() {
+		return sex;
 	}
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
+	public void setSex(Integer sex) {
+		this.sex = sex;
 	}
 
+	public Integer getIntegral() {
+		return integral;
+	}
+
+	public void setIntegral(Integer integral) {
+		this.integral = integral;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", email='" + email + '\'' +
+				", userName='" + userName + '\'' +
+				", password='" + password + '\'' +
+				", sex=" + sex +
+				", integral=" + integral +
+				'}';
+	}
 }
