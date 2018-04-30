@@ -1,0 +1,179 @@
+.brief-info {
+    padding: 20px 0;
+}
+.brief-info .info-author-name {
+    display: inline-block;
+    margin-left: 25px;
+    margin-right: 10px;
+}
+.brief-info span.info-text {
+    font-weight: 600;
+    font-size: 16px;
+}
+.brief-info span.info-author-gender, .brief-info span.info-author-experience {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #333;
+}
+
+/*个人主页的导航栏*/
+.Tabs {
+    padding: 0 4px;
+    border-bottom: 1px solid #f0f2f7;
+}
+.ProfileMain-tabs {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.Tabs-item {
+    display: inline-block;
+    padding: 0 20px;
+}
+.Tabs-link {
+    position: relative;
+    display: inline-block;
+    padding: 16px 0 17px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #404040;
+    text-align: center;
+}
+.Tabs-link:hover {
+    text-decoration: none;
+}
+.Tabs-link.is-active {
+    font-weight: 700;
+    color: #333;
+}
+.Tabs-link.is-active:after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 3px;
+    background: #0f88eb;
+    content: '';
+}
+.Tabs-meta {
+    margin-left: 6px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #a1aebf;
+}
+
+/*内容*/
+.profile-main .List .List-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 34px;
+    padding: 11px 0;
+    margin: 0 24px;
+    border-bottom: 1px solid #f0f2f7;
+    font-weight: 700;
+}
+.profile-main .List .List-content {
+    position: relative;
+    padding: 0 20px 15px 20px;
+}
+.profile-main .List .List-content .List-item {
+    position: relative;
+    padding: 20px 24px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+/*具体的回答*/
+.answer-item .answer-head .answer-title a, .ask-item .ask-title a {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #337ab7;
+    cursor: pointer;
+}
+.answer-item .answer-head .voters {
+    color: #999;
+    font-size: 13px;
+}
+.answer-item .feed-vote {
+    float: left;
+    margin-left: 0;
+}
+.answer-item .answer-text {
+    min-height: 40px;
+    margin-left: 80px;
+}
+
+/*具体的提问*/
+.profile-main #profile-asks .List-content .ask-item {
+    margin: 0 40px;
+    padding: 15px 0px;
+    border-bottom: 1px solid #f0f2f7;
+}
+.ask-status {
+    margin-top: 5px;
+    color: #8590a6;
+}
+.ask-statusItem {
+    margin: 0 5px;
+    content: '\B7';
+}
+
+/*个人信息*/
+.profile-main #profile-info .List-content .info-item {
+    border-bottom: none;
+    font-size: 17px;
+}
+.info-item .item-name {
+    display: inline-block;
+    width: 100px;
+    border-right: 1px solid #ccc;
+}
+.info-item .value {
+    display: inline-block;
+    margin-left: 40px;
+}
+.info-item .change, .info-item .cancelChange {
+    float: right;
+    margin-top: -4px;
+}
+.info-item .saveChange {
+    float: right;
+    margin-top: -4px;
+    margin-right: 5px;
+}
+.info-item .value.glyphicon-lock {
+    color: #888;
+}
+
+
+.password-change{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 20%;
+}
+.password-change div{
+    margin-bottom: 20px;
+}
+.password-change div #oldpass, .password-change div #newpass, .password-change div #againpass{
+    width: 200px;
+}
+.password-change div label.error{
+    margin-top: 8px;
+    margin-left: 16px;
+    font-weight: normal;
+    color: red;
+}
+.password-change .change {
+    margin-left: 60%;
+}

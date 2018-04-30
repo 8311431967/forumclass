@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录</title>
+<link rel="stylesheet" type="text/css" href="css/lib/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style/common.css" />
+<link rel="stylesheet" type="text/css" href="css/style/logAndReg.css" />
+</head>
+<body>
+	<header role="banner" class="AppHeader">
+		<div class="AppHeader-inner">
+			<a href="home.html" aria-label="知也" class="AppName" title="进入首页">知也</a>
+			<span>登录页</span>
+		</div>
+	</header>
+
+	<main role="main" class="App-main">
+		<div class="main-feed-wrapper">
+			<!--<form id="loginForm" action="#" method="post">-->
+				<div>
+					<label for="email">邮箱</label>
+					<input type="text" name="username" id="email" placeholder="请输入您的邮箱" class="form-control" required="true" />
+				</div>
+				<div>
+					<label for="password">密码</label>
+					<input type="password" name="password" id="password" placeholder="请输入你的密码" class="form-control" required="true" />
+				</div>
+				<div>
+					<label for="code">验证码</label>
+					<input type="text" name="code" id="code" placeholder="请输入验证码" class="form-control" required="true" style="width: 150px;" />
+					&nbsp;&nbsp;<img id="codeImage" src="/images/imagecode" alt="验证码" title="换一个验证码" />
+				</div>
+				<span class="errorMessage"></span>
+                <button id ="login" type="submit" class="change btn btn-primary">登录</button>
+                <a href="./register" class="logReg-textButton">注册</a>
+            <!--</form>	-->
+		</div>
+	</main>
+<div class="modal" id="popModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+				<h4 class="modal-title">提示</h4>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+<script type="text/javascript">
+//	var path="/zhiye";
+	$(document).ready(function(){
+	    $("#codeImage").click(function () {
+			$(this).attr("src", "/images/imagecode?" + Math.random());
+        });
+
+	    var $popModal = $("#popModal");
+		$("#login").click(function(){
+			var email=$("#email").val();
+			var password=$("#password").val();
+			var code = $("#code").val();
+
+            var $errorMessage = $(".errorMessage");
+            var errorMessage = "";
+            var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+
+			if(!reg.test(email)) {
+	            errorMessage = "请填入正确的邮箱";
+	            $errorMessage.html(errorMessage);
+	     	}else if(password.replace(/\s+/g,'') == "") {
+          		errorMessage = "请输入密码";
+          		$errorMessage.html(errorMessage);
+	     	}else if(code.replace(/\s+/g,'') == "") {
+			    errorMessage = "请输入验证码";
+                $errorMessage.html(errorMessage);
+			}else {
+				$.ajax({
+					type:"POST",
+					url:"/users/loginResult",
+//					contentType:"application/json",
+					data:{
+						email:email,
+						password:password,
+						code: code
+					},
+					dataType:"json",
+					success:function(data){
+						console.log(JSON.stringify(data));
+						if(data.flag=="success"){
+							window.location.href="/index";
+						}else{
+                            $popModal.find(".modal-body").html(data.content);
+                            $popModal.modal("show");
+						}
+					}
+				});
+			}
+		});
+        $popModal.find(".modal-footer button").click(function () {
+            $popModal.find(".close").click();
+        });
+	});
+</script>
+</body>
+</html>

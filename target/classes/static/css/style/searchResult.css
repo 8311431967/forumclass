@@ -1,0 +1,75 @@
+.Tabs {
+    padding: 0 4px;
+    border-bottom: 1px solid #f0f2f7;
+}
+.ProfileMain-tabs {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.Tabs-item {
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pointer;
+}
+.Tabs-link {
+    position: relative;
+    display: inline-block;
+    padding: 16px 0 17px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #404040;
+    text-align: center;
+}
+.Tabs-link:hover {
+	text-decoration: none;
+}
+.Tabs-link.is-active {
+	font-weight: 700;
+    color: #333;
+}
+.Tabs-link.is-active:after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 3px;
+    background: #0f88eb;
+    content: '';
+}
+.Tabs-meta {
+    margin-left: 6px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #a1aebf;
+}
+.profile-main .List .List-content {
+	position: relative;
+	padding: 0 20px 15px 20px;
+}
+.profile-main .List .List-content .List-item {
+    position: relative;
+    margin: 0 20px;
+    padding: 15px 30px;
+    font-size: 14px;
+	border-bottom: 1px solid #eee;	
+}
+
+
+#Profile-users .author-link {
+	font-size: 18px;
+}
+#Profile-users .author-info {
+	float: right;
+}
+#Profile-users .author-info span.authorInfo-ans, #Profile-users .author-info span.authorInfo-ask {
+	display: inline-block;
+	padding: 0 20px;
+	font-size: 16px;
+	width: 100px;
+	text-align: right;
+}
+#Profile-users .author-info span.authorInfo-ans {
+	border-right: 1px solid #999;
+}

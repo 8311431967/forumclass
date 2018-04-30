@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>500 内部服务器错误</title>
+    <link rel="stylesheet" href="../static/css/lib/bootstrap.min.css" th:href="@{/css/lib/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/css/style/errorPage.css" th:href="@{/css/style/errorPage.css}">
+</head>
+<body>
+    <div class="word">
+        出错啦。。。
+    </div>
+    <img src="../static/img/common/error.PNG" th:src="@{/img/common/error.PNG}" alt="error" />
+    <a href="/index">
+        <button class="btn btn-default">返回首页</button>
+    </a>
+    <a href="#" onclick="javascript:history.go(-1);">
+        <button class="btn btn-default">返回</button>
+    </a>
+</body>
+</html>

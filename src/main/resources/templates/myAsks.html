@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>我的提问</title>
+
+	<link rel="stylesheet" type="text/css" href="../static/css/lib/reset.css" th:href="@{/css/lib/reset.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/css/lib/bootstrap.min.css" th:href="@{/css/lib/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style/common.css" th:href="@{/css/style/common.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style/personal.css" th:href="@{/css/style/personal.css}" />
+</head>
+<body>
+<div th:include="header"></div>
+
+<main role="main" class="App-main">
+	<div class="main-feed-wrapper">
+		<div class="profile-header">
+			<div class="common-box brief-info">
+				<h1 class="info-author-name"></h1>
+				<span class="info-text">的个人主页</span>
+				<br/>
+				<span class="info-author-gender">性别：<span></span></span><span class="info-author-experience">经验：<span></span></span>
+			</div>
+		</div>
+		<div class="profile-main">
+			<div class="common-box profileMain-wrapper">
+				<div class="profileMain-header">
+					<div class="profileMain-header-inner">
+						<ul role="tablist" class="Tabs ProfileMain-tabs">
+							<li role="tab" class="Tabs-item" aria-controls="Profile-answers">
+								<a class="Tabs-link" href="">
+									回答
+									<span class="Tabs-meta"></span>
+								</a>
+							</li>
+							<li role="tab" class="Tabs-item" aria-controls="Profile-asks">
+								<a class="Tabs-link is-active" href="">
+									提问
+									<span class="Tabs-meta"></span>
+								</a>
+							</li>
+							<li role="tab" class="Tabs-item hide" aria-controls="Profile-info">
+								<a class="Tabs-link" href="">
+									个人信息
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="profile-asks"  class="List">
+					<div class="List-header">
+						<h4>我的提问</h4>
+					</div>
+					<div class="List-content">
+						<div id="none-personal-ask" class="common-box none hide">
+							暂时没有提问 ~
+						</div>
+
+						<!--<div class="ask-item List-item">-->
+							<!--<button class="delete del-answers commentBox-textButton" data-toggle="modal" data-target="#deleteModal">删除</button>-->
+							<!--<span class="ask-title"><a href="question.html" target="_blank" title="进入问题主页">支教有意义吗</a></span>-->
+							<!--<div class="ask-status">-->
+								<!--<span class="ask-statusItem">2016-12-12</span>-->
+								<!--<span class="ask-statusItem">23个回答</span>-->
+							<!--</div>-->
+						<!--</div>-->
+
+					</div>
+					<!-- 加载更多 -->
+					<div class="load-more load-moreAsk">
+						<span class="more">加载更多>></span>
+						<span class="loading hide">加载中...</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<div class="modal" id="askModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+				<h4 class="modal-title">提问</h4>
+			</div>
+			<div class="modal-body">
+				<textarea id="q_title" name="question-ask-title" class="form-control" placeholder="输入你的问题" rows="1"></textarea>
+				<br />
+				<textarea id="q_content" name="question-ask-desc" class="form-control" placeholder="输入你的问题描述" rows="10"></textarea>
+			</div>
+			<div class="modal-footer">
+				<button id="add_question" type="button" class="btn btn-primary btn-submit-ask">提交</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="deleteModal" data-delId="0">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+				<h4 class="modal-title">删除</h4>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="confirm-del btn btn-primary">确认删除</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="popModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+				<h4 class="modal-title">提示</h4>
+			</div>
+			<div class="modal-body">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/custom/putQuestion.js"></script>
+<script type="text/javascript" src="/js/custom/deleteDynamic.js"></script>
+<script type="text/javascript" src="/js/style/common.js"></script>
+<script type="text/javascript" src="/js/style/myAsks.js"></script>
+
+</body>
+</html>

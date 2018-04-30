@@ -1,0 +1,27 @@
+.feed-source {
+	margin: 20px 0 0 20px;
+}
+
+.feed-title {
+	display: inline-block;
+	margin-left: 10px;
+}
+.feed-title.ask-title {
+	margin-left: 94px;
+}
+.feed-content {
+	margin-left: 90px;
+	margin-right: 20px;
+}
+.feed-meta {
+	min-height: 30px;
+	margin-top: 8px;
+	padding-top: 6px;
+	padding-left: 80px;
+	background-color: #eef;
+	color: #999;
+}
+
+.feed-item .comment-holder {
+	background-color: #eef;
+}
